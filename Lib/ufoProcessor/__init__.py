@@ -860,6 +860,7 @@ class DesignSpaceProcessor(DesignSpaceDocument):
                 if hasattr(font[glyphName], "fromMathGlyph"):
                     font[glyphName].fromMathGlyph(glyphInstanceObject)
                 else:
+                    glyphInstanceObject.strict = True
                     glyphInstanceObject.extractGlyph(font[glyphName], onlyGeometry=True)
             except TypeError:
                 # this causes ruled glyphs to end up in the wrong glyphname
